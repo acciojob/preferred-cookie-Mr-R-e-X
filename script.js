@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)};path=/`;
   }
 
-  window.onload = function () {
+  function applyPreferences() {
     let getDefaultFontSize = getCookie("font_size");
     let getDefaultColor = getCookie("font_color");
 
@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", function() {
       fontColor.value = getDefaultColor;
       document.documentElement.style.setProperty("--fontcolor", getDefaultColor);
     }
-  };
+  }
+
+  window.onload = applyPreferences;
 
   submitButton.addEventListener("click", (e) => {
     e.preventDefault();
