@@ -17,14 +17,17 @@ function getCookie(name) {
 let getDefaultFontSize = getCookie("font_size");
 let getDefaultColor = getCookie("font_color");
 
-document.addEventListener("DOMContentLoaded", () => {
+ window.onload = function () {
   if (getDefaultFontSize) {
     fontSize.value = getDefaultFontSize;
+	document.documentElement.style.setProperty('--fontsize', getDefaultFontSize + 'px');
   }
   if (getDefaultColor) {
     fontColor.value = getDefaultColor;
+	  document.documentElement.style.setProperty('--fontcolor', getDefaultColor);
   }
-});
+	 
+};
 
 function setCookie(name, value) {
   document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}`;
