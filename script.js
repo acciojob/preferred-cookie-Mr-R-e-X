@@ -1,7 +1,11 @@
-//your JS code here. If required.
 let fontSize = document.querySelector("#fontsize");
 let fontColor = document.querySelector("#fontcolor");
 let submitButton = document.querySelector("#submit");
+
+// Debugging logs
+console.log("Font Size Element:", fontSize);
+console.log("Font Color Element:", fontColor);
+console.log("Submit Button Element:", submitButton);
 
 function getCookie(name) {
   let cookies = document.cookie.split("; ");
@@ -15,9 +19,7 @@ function getCookie(name) {
 }
 
 function setCookie(name, value) {
-  document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(
-    value
-  )};path=/`;
+  document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)};path=/`;
 }
 
 window.onload = function () {
@@ -26,10 +28,7 @@ window.onload = function () {
 
   if (getDefaultFontSize) {
     fontSize.value = getDefaultFontSize;
-    document.documentElement.style.setProperty(
-      "--fontsize",
-      getDefaultFontSize + "px"
-    );
+    document.documentElement.style.setProperty("--fontsize", getDefaultFontSize + "px");
   }
   if (getDefaultColor) {
     fontColor.value = getDefaultColor;
