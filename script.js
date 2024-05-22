@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
   let fontColor = document.querySelector("#fontcolor");
   let submitButton = document.querySelector("input[type='submit']");
 
+  // Debugging logs
+  console.log("Font Size Element:", fontSize);
+  console.log("Font Color Element:", fontColor);
+  console.log("Submit Button Element:", submitButton);
+
   function getCookie(name) {
     let cookies = document.cookie.split("; ");
     for (let cookie of cookies) {
