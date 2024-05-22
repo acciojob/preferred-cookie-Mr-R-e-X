@@ -14,24 +14,28 @@ function getCookie(name) {
   return null;
 }
 
-let getDefaultFontSize = getCookie("font_size");
-let getDefaultColor = getCookie("font_color");
+function setCookie(name, value) {
+  document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(
+    value
+  )};path=/`;
+}
 
- window.onload = function () {
+window.onload = function () {
+  let getDefaultFontSize = getCookie("font_size");
+  let getDefaultColor = getCookie("font_color");
+
   if (getDefaultFontSize) {
     fontSize.value = getDefaultFontSize;
-	document.documentElement.style.setProperty('--fontsize', getDefaultFontSize + 'px');
+    document.documentElement.style.setProperty(
+      "--fontsize",
+      getDefaultFontSize + "px"
+    );
   }
   if (getDefaultColor) {
     fontColor.value = getDefaultColor;
-	  document.documentElement.style.setProperty('--fontcolor', getDefaultColor);
+    document.documentElement.style.setProperty("--fontcolor", getDefaultColor);
   }
-	 
 };
-
-function setCookie(name, value) {
-  document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}`;
-}
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -39,4 +43,6 @@ submitButton.addEventListener("click", (e) => {
   let v_color = fontColor.value;
   setCookie("font_size", v_font);
   setCookie("font_color", v_color);
+  document.documentElement.style.setProperty("--fontsize", v_font + "px");
+  document.documentElement.style.setProperty("--fontcolor", v_color);
 });
