@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function() {
     e.preventDefault();
     let v_font = fontSize.value;
     let v_color = fontColor.value;
-    setCookie("font_size", v_font);
-    setCookie("font_color", v_color);
+    setCookie("fontsize", v_font);
+    setCookie("fontcolor", v_color);
     document.documentElement.style.setProperty("--fontsize", v_font + "px");
     document.documentElement.style.setProperty("--fontcolor", v_color);
   });
