@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function applyPreferences() {
-    let getDefaultFontSize = getCookie("font_size");
-    let getDefaultColor = getCookie("font_color");
+    let getDefaultFontSize = getCookie("fontsize");
+    let getDefaultColor = getCookie("fontcolor");
 
     if (getDefaultFontSize) {
       fontSize.value = getDefaultFontSize;
